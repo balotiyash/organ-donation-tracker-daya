@@ -106,10 +106,18 @@ const HospitalDashboard = () => {
               <Link to="/contact">
                 <Button variant="ghost">Contact</Button>
               </Link>
-              <Button variant="outline" onClick={() => {/* Add inventory handler */}}>
-                <Plus className="w-4 h-4 mr-2" />
-                Add Inventory
-              </Button>
+              <Link to="/add-inventory">
+                <Button variant="outline">
+                  <Plus className="w-4 h-4 mr-2" />
+                  Add Inventory
+                </Button>
+              </Link>
+              <Link to="/organ-requirements">
+                <Button variant="outline">
+                  <Heart className="w-4 h-4 mr-2" />
+                  Organ Network
+                </Button>
+              </Link>
               <Link to="/emergency">
                 <Button variant="destructive">
                   <AlertTriangle className="w-4 h-4 mr-2" />

@@ -56,11 +56,14 @@ const Landing = () => {
               <Link to="/contact">
                 <Button variant="ghost">Contact</Button>
               </Link>
-              <Link to="/profile">
-                <Button variant="ghost">Profile</Button>
+              <Link to="/pledge">
+                <Button variant="ghost">Pledge</Button>
               </Link>
               <Link to="/hospital">
                 <Button variant="ghost">Hospital Login</Button>
+              </Link>
+              <Link to="/ambulance">
+                <Button variant="ghost">Ambulance</Button>
               </Link>
               <Link to="/donor">
                 <Button variant="outline">Donor Portal</Button>

@@ -96,10 +96,12 @@ const DonorDashboard = () => {
             </div>
             
             <div className="flex items-center space-x-4">
-              <Button variant="outline">
-                <Bell className="w-4 h-4 mr-2" />
-                Alerts (3)
-              </Button>
+              <Link to="/donor/alerts">
+                <Button variant="outline">
+                  <Bell className="w-4 h-4 mr-2" />
+                  Alerts (3)
+                </Button>
+              </Link>
               <Button className="bg-primary hover:bg-primary/90">
                 <Heart className="w-4 h-4 mr-2" />
                 Donate Now
@@ -218,12 +220,16 @@ const DonorDashboard = () => {
                         <span className="text-accent font-medium">{request.reward}</span>
                       </div>
                       <div className="flex gap-2">
-                        <Button size="sm" variant="outline">
-                          View Details
-                        </Button>
-                        <Button size="sm" className="bg-primary hover:bg-primary/90">
-                          Respond
-                        </Button>
+                        <Link to={`/donor/view-details/${index + 1}`}>
+                          <Button size="sm" variant="outline">
+                            View Details
+                          </Button>
+                        </Link>
+                        <Link to={`/donor/respond/${index + 1}`}>
+                          <Button size="sm" className="bg-primary hover:bg-primary/90">
+                            Respond
+                          </Button>
+                        </Link>
                       </div>
                     </div>
                   </div>
