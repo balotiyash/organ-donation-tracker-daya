@@ -1,0 +1,10 @@
+{
+  "name": "UBlood",
+  "short_name": "UBlood",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#dc2626",
+  "description": "UBlood - Emergency Blood Donation and Aid Platform",
+  "icons": []
+}
