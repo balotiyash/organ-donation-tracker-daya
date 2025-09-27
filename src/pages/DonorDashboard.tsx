@@ -102,10 +102,12 @@ const DonorDashboard = () => {
                   Alerts (3)
                 </Button>
               </Link>
-              <Button className="bg-primary hover:bg-primary/90">
-                <Heart className="w-4 h-4 mr-2" />
-                Donate Now
-              </Button>
+              <Link to="/donor/donate-now">
+                <Button className="bg-gradient-to-r from-red-500 to-pink-600 hover:from-red-600 hover:to-pink-700 text-white">
+                  <Heart className="w-4 h-4 mr-2" />
+                  Donate Now
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
@@ -173,6 +175,40 @@ const DonorDashboard = () => {
             </CardContent>
           </Card>
         </div>
+
+        {/* Quick Donation Access */}
+        <Card className="mb-8 bg-gradient-to-r from-red-50 to-pink-50 border-red-200">
+          <CardContent className="p-6">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center space-x-4">
+                <div className="w-12 h-12 bg-gradient-to-r from-red-500 to-pink-600 rounded-full flex items-center justify-center">
+                  <Heart className="w-6 h-6 text-white" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold text-gray-900">Ready to Save Lives?</h3>
+                  <p className="text-sm text-gray-600">Schedule your next donation appointment in just a few clicks</p>
+                </div>
+              </div>
+              <div className="flex items-center space-x-4">
+                <div className="text-right">
+                  <p className="text-sm text-gray-600">Next eligible date:</p>
+                  <p className="font-semibold text-medical-primary">
+                    {new Date(donorStats.nextEligibleDate).toLocaleDateString()}
+                  </p>
+                </div>
+                <Link to="/donor/donate-now">
+                  <Button 
+                    size="lg"
+                    className="bg-gradient-to-r from-red-500 to-pink-600 hover:from-red-600 hover:to-pink-700 text-white shadow-lg"
+                  >
+                    <Heart className="w-4 h-4 mr-2" />
+                    Schedule Donation
+                  </Button>
+                </Link>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Emergency Requests */}

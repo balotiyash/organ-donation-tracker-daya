@@ -14,7 +14,11 @@ import {
   Activity,
   Search,
   Filter,
-  Plus
+  Plus,
+  Brain,
+  Zap,
+  Target,
+  TrendingUp
 } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
@@ -112,10 +116,22 @@ const HospitalDashboard = () => {
                   Add Inventory
                 </Button>
               </Link>
+              <Link to="/blood-inventory-status">
+                <Button variant="outline">
+                  <Droplets className="w-4 h-4 mr-2" />
+                  Blood Inventory
+                </Button>
+              </Link>
               <Link to="/organ-requirements">
                 <Button variant="outline">
                   <Heart className="w-4 h-4 mr-2" />
                   Organ Network
+                </Button>
+              </Link>
+              <Link to="/ai-agent">
+                <Button variant="outline" className="border-blue-300 text-blue-700 hover:bg-blue-50">
+                  <Brain className="w-4 h-4 mr-2" />
+                  AI Agent
                 </Button>
               </Link>
               <Link to="/emergency">
@@ -128,6 +144,43 @@ const HospitalDashboard = () => {
           </div>
         </div>
       </nav>
+
+      {/* AI Insights Banner */}
+      <div className="bg-gradient-to-r from-blue-50 to-purple-50 border-b border-blue-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center space-x-4">
+              <div className="flex items-center space-x-2">
+                <Brain className="h-6 w-6 text-blue-600 animate-pulse" />
+                <div>
+                  <h3 className="font-semibold text-blue-900">AI Agent Active</h3>
+                  <p className="text-sm text-blue-700">Autonomous monitoring and optimization in progress</p>
+                </div>
+              </div>
+              <div className="flex items-center space-x-6 text-sm">
+                <div className="flex items-center space-x-1">
+                  <Target className="h-4 w-4 text-green-600" />
+                  <span className="text-green-700">3 AI Matches Found</span>
+                </div>
+                <div className="flex items-center space-x-1">
+                  <TrendingUp className="h-4 w-4 text-purple-600" />
+                  <span className="text-purple-700">23% Efficiency Gain</span>
+                </div>
+                <div className="flex items-center space-x-1">
+                  <Zap className="h-4 w-4 text-orange-600" />
+                  <span className="text-orange-700">Real-time Optimization</span>
+                </div>
+              </div>
+            </div>
+            <Link to="/ai-agent">
+              <Button size="sm" className="bg-blue-600 hover:bg-blue-700">
+                <Brain className="h-4 w-4 mr-1" />
+                View AI Dashboard
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Dashboard Overview */}
@@ -177,6 +230,120 @@ const HospitalDashboard = () => {
           </Card>
         </div>
 
+        {/* Dashboard Content */}
+                {/* AI-Powered Emergency Alerts */}
+        <div className="mb-8">
+          <Card className="border-red-200 bg-red-50">
+            <CardHeader className="pb-3">
+              <CardTitle className="flex items-center justify-between">
+                <div className="flex items-center space-x-2">
+                  <Brain className="h-5 w-5 text-red-600" />
+                  <span className="text-red-800">AI Emergency Alerts</span>
+                </div>
+                <Badge variant="destructive" className="animate-pulse">
+                  2 Critical
+                </Badge>
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-3">
+                <div className="flex items-center justify-between p-3 bg-white rounded-lg border border-red-200">
+                  <div className="flex items-center space-x-3">
+                    <AlertTriangle className="h-5 w-5 text-red-600" />
+                    <div>
+                      <div className="font-semibold text-red-800">Critical O- Shortage Detected</div>
+                      <div className="text-sm text-red-600">AI identified 5 nearby donors, emergency outreach initiated</div>
+                    </div>
+                  </div>
+                  <Button size="sm" className="bg-red-600 hover:bg-red-700">
+                    <Target className="h-4 w-4 mr-1" />
+                    View AI Response
+                  </Button>
+                </div>
+                
+                <div className="flex items-center justify-between p-3 bg-white rounded-lg border border-orange-200">
+                  <div className="flex items-center space-x-3">
+                    <Clock className="h-5 w-5 text-orange-600" />
+                    <div>
+                      <div className="font-semibold text-orange-800">Route Optimization Available</div>
+                      <div className="text-sm text-orange-600">AI found 15% faster route for current organ transport</div>
+                    </div>
+                  </div>
+                  <Button size="sm" variant="outline" className="border-orange-300">
+                    <TrendingUp className="h-4 w-4 mr-1" />
+                    Apply Optimization
+                  </Button>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* Quick Access Panel */}
+        <Card className="mb-8">
+          <CardHeader>
+            <CardTitle className="flex items-center space-x-2">
+              <Zap className="h-5 w-5 text-primary" />
+              <span>Quick Access - Blood Management</span>
+            </CardTitle>
+            <CardDescription>
+              Rapid access to critical blood inventory and donor management tools
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <Link to="/blood-inventory-status">
+                <Card className="border-2 border-transparent hover:border-primary transition-colors cursor-pointer">
+                  <CardContent className="p-4">
+                    <div className="flex items-center space-x-3">
+                      <div className="p-2 bg-blue-100 rounded-lg">
+                        <Droplets className="h-6 w-6 text-blue-600" />
+                      </div>
+                      <div>
+                        <h3 className="font-semibold">Blood Inventory Status</h3>
+                        <p className="text-sm text-muted-foreground">Monitor and filter blood inventory</p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </Link>
+
+              <Link to="/emergency-donor-finder">
+                <Card className="border-2 border-transparent hover:border-red-500 transition-colors cursor-pointer">
+                  <CardContent className="p-4">
+                    <div className="flex items-center space-x-3">
+                      <div className="p-2 bg-red-100 rounded-lg">
+                        <AlertTriangle className="h-6 w-6 text-red-600" />
+                      </div>
+                      <div>
+                        <h3 className="font-semibold">Emergency Donor Finder</h3>
+                        <p className="text-sm text-muted-foreground">Find donors for critical situations</p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </Link>
+
+              <Link to="/nearby-donor-contact">
+                <Card className="border-2 border-transparent hover:border-green-500 transition-colors cursor-pointer">
+                  <CardContent className="p-4">
+                    <div className="flex items-center space-x-3">
+                      <div className="p-2 bg-green-100 rounded-lg">
+                        <Users className="h-6 w-6 text-green-600" />
+                      </div>
+                      <div>
+                        <h3 className="font-semibold">Contact Nearby Donors</h3>
+                        <p className="text-sm text-muted-foreground">Connect with local donor network</p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </Link>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Dashboard Content */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Blood Inventory */}
           <div className="lg:col-span-2">

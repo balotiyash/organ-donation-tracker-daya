@@ -19,6 +19,13 @@ import DonorRespond from "./pages/DonorRespond";
 import DonationComplete from "./pages/DonationComplete";
 import AmbulanceDashboard from "./pages/AmbulanceDashboard";
 import OrganRequirementSystem from "./pages/OrganRequirementSystem";
+import AIAgentDashboard from "./pages/AIAgentDashboard";
+import ViewAIResponse from "./pages/ViewAIResponse";
+import ApplyOptimization from "./pages/ApplyOptimization";
+import BloodInventoryStatus from "./pages/BloodInventoryStatus";
+import EmergencyDonorFinder from "./pages/EmergencyDonorFinder";
+import NearbyDonorContact from "./pages/NearbyDonorContact";
+import DonateNow from "./pages/DonateNow";
 
 const queryClient = new QueryClient();
 
@@ -37,9 +44,16 @@ const App = () => (
           <Route path="/donor/view-details/:id" element={<DonorViewDetails />} />
           <Route path="/donor/respond/:id" element={<DonorRespond />} />
           <Route path="/donor/donation-complete/:id" element={<DonationComplete />} />
+          <Route path="/donor/donate-now" element={<DonateNow />} />
           <Route path="/emergency" element={<EmergencyDashboard />} />
           <Route path="/ambulance" element={<AmbulanceDashboard />} />
           <Route path="/organ-requirements" element={<OrganRequirementSystem />} />
+          <Route path="/ai-agent" element={<AIAgentDashboard />} />
+          <Route path="/view-ai-response" element={<ViewAIResponse />} />
+          <Route path="/apply-optimization" element={<ApplyOptimization />} />
+          <Route path="/blood-inventory-status" element={<BloodInventoryStatus />} />
+          <Route path="/emergency-donor-finder" element={<EmergencyDonorFinder />} />
+          <Route path="/nearby-donor-contact" element={<NearbyDonorContact />} />
           <Route path="/add-inventory" element={<AddInventory />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
